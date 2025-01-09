@@ -5,35 +5,32 @@ title: CSE 30341 - Operating Systems Principles
 
 ## CSE 30341 - Operating Systems Principles
 
-<img align="right" height="192" src="http://github.com/dthain/basekernel/raw/master/screenshot-windows.png"/>
-
 - 109 Pasquerilla Hall, Spring 2025
 - Prof. Douglas Thain (`dthain@nd.edu`)
-- Grad TA: Jin Zhou (`jzhou24@nd.edu`)
-- Grad TA: Samit Muhaiman (`smuhaimi@nd.edu`)
-- Ugrad TA: Chris Boumalhab (`cboumalh@nd.edu`)
-- Ugrad TA: Eamon Tracey (`etracey@nd.edu`)
-- Ugrad TA: Daniel "Zen" Yu (`dyu4@nd.edu`)
+- Grad TA: Lydia Csaszar (`lcsaszar01@nd.edu`)
+- Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
+- Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
+- Ugrad TA: Leyang Li (`lli27@nd.edu`)
 
 ##  Office Hours - TBA
 
 - Prof. Thain in 384C Fitzpatrick
-- Others in 150B Fitzpatrick (CSE student commons)
+- TAs in 150B Fitzpatrick (CSE student commons)
 
 ## Quick Links
 
 - [Syllabus](syllabus)
 - [General Instructions for Assignments](general)
-- [Gradebook on Canvas](https://canvas.nd.edu/courses/82668/gradebook)
-- [Assignments on Canvas](https://canvas.nd.edu/courses/82668/assignments)
-- [Slack Channel](https://nd-cse.slack.com/archives/C06D9T46UG2)
+- [Gradebook on Canvas](https://canvas.nd.edu/courses/109948/gradebook)
+- [Assignments on Canvas](https://canvas.nd.edu/courses/109948/assignments)
+- [Slack Channel](https://app.slack.com/client/T0HJVP8MS/C087P2MUKNY)
 
 ## Online Textbook
 
 [<img align="right" height="128" src="https://pages.cs.wisc.edu/~remzi/OSTEP/book-cover-two.jpg"/>](http://ostep.org)
 
 - Required: [Operating Systems in Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP), Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau, Arpaci-Dusseau Books, March, 2018 (Version 1.00)
-- Suggested: The C Programming Language, Brian Kernighan and Dennis Ritchie, Prentice Hall, 1988.
+- Suggested: [Dive Info Systems](https://diveintosystems.org/book), Suzanne Matthews, Tia Newhall, and Kevin Webb, 2020.
 
 ## Tentative Schedule
 
@@ -43,19 +40,19 @@ title: CSE 30341 - Operating Systems Principles
 | 20 Jan  | Ch. 3-6	| Processes | Processes | [Project 1](project1)
 | 27 Jan  | Ch. 7-11	| Scheduling <br> [Basekernel Procs](basekernel-process)| Scheduling	| [Homework B](homework-b)
 | 3 Feb   | Ch. 25-29	| Threads	 | Locks and Data Structures |  [Project 2](project2)
-| 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp24/tree/main/examples) | [Homework C](homework-c)
-| 17 Feb  | Ch. 31	| CV Contd / [Pathfinder](https://www.cs.cornell.edu/courses/cs614/1999sp/papers/pathfinder.html)    | Semaphores / [Examples](https://github.com/dthain/opsys-sp24/tree/main/examples) | [Project 3](project3)
-| 24 Feb  | Ch. 32-33	| Deadlock	 | Memory Overview	| [Homework D](homework-d)
+| 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp25/tree/main/examples) | **Homework C**
+| 17 Feb  | Ch. 31	| CV Contd / [Pathfinder](https://www.cs.cornell.edu/courses/cs614/1999sp/papers/pathfinder.html)    | Semaphores / [Examples](https://github.com/dthain/opsys-sp25/tree/main/examples) | **Project 3**
+| 24 Feb  | Ch. 32-33	| Deadlock	 | Memory Overview	| **Homework D**
 | 3 Mar   | Ch. 13-16   | Segmentation   | [Midterm Exam](midterm)	|
 | 10 Mar  | -           | Spring Break   | Spring Break |
-| 17 Mar  | Ch. 17-19	| Paging Mechanisms | TLBs / Performance	| **[Project 4](project4)**
+| 17 Mar  | Ch. 17-19	| Paging Mechanisms | TLBs / Performance	| **Project 4**
 | 24 Mar  | Ch. 20-22	| Multi-Level Paging | Swapping	|
-| 31 Mar  | Ch. 35-37 + 44 | Swapping Cont. | I/O Devices / ([Mouse](https://github.com/dthain/basekernel/blob/master/kernel/mouse.c) / [Disk](https://github.com/dthain/basekernel/blob/master/kernel/ata.c))  | [Homework E](homework-e)
-| 7 Apr   | Ch. 38-39	| HDD [Datasheet](datasheets/seagate-st8000-hdd.pdf) / SSD [Datasheet](micron-2280-ssd.pdf) | Buffer Cache / Files-Dirs | [Project 5](project5)
+| 31 Mar  | Ch. 35-37 + 44 | Swapping Cont. | I/O Devices / ([Mouse](https://github.com/dthain/basekernel/blob/master/kernel/mouse.c) / [Disk](https://github.com/dthain/basekernel/blob/master/kernel/ata.c))  | **Homework E**
+| 7 Apr   | Ch. 38-39	| HDD [Datasheet](datasheets/seagate-st8000-hdd.pdf) / SSD [Datasheet](micron-2280-ssd.pdf) | Buffer Cache / Files-Dirs | **Project 5**
 | 14 Apr  | Ch. 40-42	| FS Impl        | FS Impl | (Easter Break)
 | 21 Apr  | Ch. 53-55	| Security       | Security | 
-| 28 Apr  | -           | Review | No Class | [Project 6 Due Wed](project6)
-| 5 May	  |             |                | [Final Exam TBA](final) |
+| 28 Apr  | -           | Review | No Class | **Project 6**
+| 5 May	  |             |                | ** Final Exam ** |
 
 ## Very Incomplete List of Notable Operating Systems
 
