@@ -1,0 +1,15 @@
+
+ClusterClient( name ):
+   loop:
+       client[i] = HTClient( name + i )
+
+def connect():
+   loop:
+       client[i].connect()
+
+def lookup(k):
+   return client[random()].lookup(k)
+
+def insert(k,v):
+    loop:
+	client[i].insert(k,v)
