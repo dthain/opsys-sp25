@@ -5,13 +5,14 @@ of small integers accompanied by appropriate metric units.  For example, write a
 as 4MB, not 4194304 bytes.
 
 I don't expect that these problems to be *hard*,
-but you do need to be able to do them quickly and easily throughout the semesters.
+but you do need to be able to do them quickly and easily throughout the semester,
+so practice until this sort of conversions come easily to you.
 
 Careful: **B** indicates a byte, while **b** indicates a bit.
 
-Please write out your answers neatly and upload as a PDF or JPG on Canvas.
+Write out your answers neatly, show your work, and upload a picture to Canvas.
 
-1 - Memorize the powers of two up to 2^10 and binary metric prefixes up to Exa.  Come up with a chant, a poem, a haiku, or something else to help you memorize them.  Practice with a classmate.
+1 - Memorize the powers of two up to 2^10 and binary metric prefixes up to Exa.  Come up with a chant, a poem, a haiku, or something else to help you recite them daily.  Practice with a friend or classmate, and write their name here.
 
 2 - How many bytes can be addressed by a CPU with a 24-bit address bus?
 
