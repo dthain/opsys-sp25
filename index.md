@@ -40,16 +40,16 @@ title: CSE 30341 - Operating Systems Principles
 | 20 Jan  | Ch. 3-6	| Processes | Processes | [Project 1](project1)
 | 27 Jan  | Ch. 7-11	| Scheduling <br> [Basekernel Procs](basekernel-process)| Scheduling	| **Homework B**
 | 3 Feb   | Ch. 25-29	| Threads	 | Locks and Data Structures | **Project 2**
-| 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp25/tree/main/examples) | **Homework C**
-| 17 Feb  | Ch. 31	| CV Contd / [Pathfinder](https://www.cs.cornell.edu/courses/cs614/1999sp/papers/pathfinder.html)    | Semaphores / [Examples](https://github.com/dthain/opsys-sp25/tree/main/examples) | **Project 3**
-| 24 Feb  | Ch. 32-33	| Deadlock	 | Memory Overview	| **Homework D**
-| 3 Mar   | Ch. 13-16   | Segmentation   | [Midterm Exam](midterm)	|
+| 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp25/tree/master/examples) | **Homework C**
+| 17 Feb  | Ch. 31	| CV Contd / [Pathfinder](https://www.cs.cornell.edu/courses/cs614/1999sp/papers/pathfinder.html)    | Semaphores / [Examples](https://github.com/dthain/opsys-sp25/tree/master/examples) | **Project 3**
+| 24 Feb  | Ch. 32-33	| Deadlock	 | Memory Overview || **Homework D**
+| 3 Mar   | Ch. 13-16   | Segmentation   | [Midterm Exam](midterm) |
 | 10 Mar  | -           | Spring Break   | Spring Break |
 | 17 Mar  | Ch. 17-19	| Paging Mechanisms | TLBs / Performance	| **Project 4**
-| 24 Mar  | Ch. 20-22	| Multi-Level Paging | Swapping	|
+| 24 Mar  | Ch. 20-22	| Multi-Level Paging | Swapping	| **Homework E**
 | 31 Mar  | Ch. 35-37 + 44 | Swapping Cont. | I/O Devices / ([Mouse](https://github.com/dthain/basekernel/blob/master/kernel/mouse.c) / [Disk](https://github.com/dthain/basekernel/blob/master/kernel/ata.c))  | **Homework E**
-| 7 Apr   | Ch. 38-39	| HDD [Datasheet](datasheets/seagate-st8000-hdd.pdf) / SSD [Datasheet](micron-2280-ssd.pdf) | Buffer Cache / Files-Dirs | **Project 5**
-| 14 Apr  | Ch. 40-42	| FS Impl        | FS Impl | (Easter Break)
+| 7 Apr   | Ch. 38-39	| HDD [Datasheet](datasheets/seagate-st8000-hdd.pdf) / SSD [Datasheet](micron-2280-ssd.pdf) | Buffer Cache | **Project 5**
+| 14 Apr  | Ch. 40-42	| Filesystem     | Filesystem | (Easter Break)
 | 21 Apr  | Ch. 53-55	| Security       | Security | 
 | 28 Apr  | -           | Review | No Class | **Project 6**
 | 5 May	  |             |                | ** Final Exam ** |
