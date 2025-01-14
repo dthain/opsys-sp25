@@ -5,7 +5,7 @@ title: CSE 30341 - Operating Systems Principles
 
 ## CSE 30341 - Operating Systems Principles
 
-- 109 Pasquerilla Hall, Spring 2025
+- 107 Pasquerilla Hall, Spring 2025
 - Prof. Douglas Thain (`dthain@nd.edu`)
 - Grad TA: Lydia Csaszar (`lcsaszar01@nd.edu`)
 - Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
