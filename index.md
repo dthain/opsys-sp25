@@ -30,7 +30,7 @@ title: CSE 30341 - Operating Systems Principles
 [<img align="right" height="128" src="https://pages.cs.wisc.edu/~remzi/OSTEP/book-cover-two.jpg"/>](http://ostep.org)
 
 - Required: [Operating Systems in Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP), Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau, Arpaci-Dusseau Books, March, 2018 (Version 1.00)
-- Suggested: [Dive Info Systems](https://diveintosystems.org/book), Suzanne Matthews, Tia Newhall, and Kevin Webb, 2020.
+- For Reference: [Dive Info Systems](https://diveintosystems.org/book), Suzanne Matthews, Tia Newhall, and Kevin Webb, 2020.
 
 ## Tentative Schedule
 
@@ -38,8 +38,8 @@ title: CSE 30341 - Operating Systems Principles
 |-----|-----|-----|---|---|
 | 13 Jan  |             | Overview<br>[Syllabus](syllabus)<br>[Metric Math](metric) | Hardware<br>[Hardware Overview](hardware)| **[Homework A](homework-metric)**<br>**Ch 1-2 Notes Due**
 | 20 Jan  | Ch. 3-6	| Processes | Processes | [Project 1](project1)
-| 27 Jan  | Ch. 7-11	| Scheduling <br> [Basekernel Procs](basekernel-process)| Scheduling	| [Homework B](homework-b)
-| 3 Feb   | Ch. 25-29	| Threads	 | Locks and Data Structures |  [Project 2](project2)
+| 27 Jan  | Ch. 7-11	| Scheduling <br> [Basekernel Procs](basekernel-process)| Scheduling	| **Homework B**
+| 3 Feb   | Ch. 25-29	| Threads	 | Locks and Data Structures | **Project 2**
 | 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp25/tree/main/examples) | **Homework C**
 | 17 Feb  | Ch. 31	| CV Contd / [Pathfinder](https://www.cs.cornell.edu/courses/cs614/1999sp/papers/pathfinder.html)    | Semaphores / [Examples](https://github.com/dthain/opsys-sp25/tree/main/examples) | **Project 3**
 | 24 Feb  | Ch. 32-33	| Deadlock	 | Memory Overview	| **Homework D**
