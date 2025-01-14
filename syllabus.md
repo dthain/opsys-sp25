@@ -37,6 +37,9 @@ Canvas will be used for the limited purposes of handing in written homeworks and
 - Required: Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau, **Operating Systems in Three Easy Pieces**, Arpaci-Dusseau Books, 2019. [http://ostep.org](http://ostep.org)
 - Suggested Reference: [Dive Info Systems](https://diveintosystems.org/book), Suzanne Matthews, Tia Newhall, and Kevin Webb, 2020.
 
+The course web page will also have a selection of short topical readings linked to certain class days.
+You are also responsible for reading and absorbing that material.
+
 ## Reading Assignments
 
 The textbook provides the foundation of the course, and it will be important for you to absorb all of it thoroughly.
