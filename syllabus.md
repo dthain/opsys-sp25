@@ -82,7 +82,7 @@ you will get much more out of actively participating in person.
 
 ## Grading
 
-The course grade will be based on six programming projects, four homeworks, a midterm, and a final exam. For each assignment, a numeric grade will be assigned. Grades will be made available in Canvas.  The grade breakdown is projects (40%), homeworks (10%), reading notes (10%), midterms (20%) and final exam (20%). At the end of the semester, number grades will be converted to letter grades: 90/80/70 are the usual cutoffs for A/B/C grades, respectively. The instructor will exercise discretion on borderline grades, or to account for a trend of increasing/decreasing grades throughout the semester.
+The course grade will be based on six programming projects, four homeworks, a midterm, and a final exam. For each assignment, a numeric grade will be assigned. Grades will be made available in Canvas.  The grade breakdown is projects (45%), homeworks (10%), reading notes (10%), midterm (15%) and final exam (20%). At the end of the semester, number grades will be converted to letter grades: 90/80/70 are the usual cutoffs for A/B/C grades, respectively. The instructor will exercise discretion on borderline grades, or to account for a trend of increasing/decreasing grades throughout the semester.
 
 If you believe an error has been made in grading an item, please bring it to the attention of the TA who graded it within seven days of receiving it. (The TA who graded it knows the details best, and so can give you the best explanation.) Factual and clerical errors will of course be cheerfully corrected. If you are unsatisfied with the TA's explanation, you may appeal to the instructor. After seven days, graded items are final and will not be revisited.
 
