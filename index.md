@@ -12,10 +12,13 @@ title: CSE 30341 - Operating Systems Principles
 - Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
 - Ugrad TA: Leyang Li (`lli27@nd.edu`)
 
-##  Office Hours - TBA
+##  Office Hours (Starting Week of Jan 20)
 
-- Prof. Thain in 384C Fitzpatrick
+<img src=office-hours.png>
+
 - TAs in 150B Fitzpatrick (CSE student commons)
+- `***` indicates not first week
+- Prof. Thain in 384C Fitzpatrick (CSE Department Office)
 
 ## Quick Links
 
