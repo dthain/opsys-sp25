@@ -1,24 +1,17 @@
 ---
 layout: default
-title: CSE 30341 - Operating Systems Principles
+title: CSE 30341 - Operating Systems Principles - Spring 2025
 ---
 
-## CSE 30341 - Operating Systems Principles
+## CSE 30341 - Operating Systems Principles - Spring 2025
 
-- 107 Pasquerilla Hall, Spring 2025
-- Prof. Douglas Thain (`dthain@nd.edu`)
-- Grad TA: Lydia Csaszar (`lcsaszar01@nd.edu`)
-- Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
-- Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
-- Ugrad TA: Leyang Li (`lli27@nd.edu`)
-
-##  Office Hours (Starting Week of Jan 20)
-
-<img src="office-hours.png" width="75%" />
-
-- `***` indicates not first week
-- TAs in 150B Fitzpatrick (CSE student commons)
-- Prof. Thain in 384C Fitzpatrick (CSE Department Office)
+<table>
+<tr><td><img src="images/dthain.jpg" width="128px"><td>Prof. Douglas Thain (`dthain@nd.edu`)
+<tr><td><img src="images/lcsaszar.jpg" width="128px"><td>Grad TA: Lydia Csaszar (`lcsaszar@nd.edu`)
+<tr><td><img src="images/kkasensk.png" width="128px"><td>Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
+<tr><td><img src="images/atsianti.jpg" width="128px"><td>Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
+<tr><td><img src="images/lli27.jpg" width="128px"><td>Ugrad TA: Leyang Li (`lli27@nd.edu`)
+</table>
 
 ## Quick Links
 
@@ -28,7 +21,15 @@ title: CSE 30341 - Operating Systems Principles
 - [Assignments on Canvas](https://canvas.nd.edu/courses/109948/assignments)
 - [Slack Channel](https://app.slack.com/client/T0HJVP8MS/C087P2MUKNY)
 
-## Online Textbook
+## Office Hours (Starting Week of Jan 20)
+
+<img src="office-hours.png" width="75%" />
+
+- `***` indicates not first week
+- TAs in 150B Fitzpatrick (CSE student commons)
+- Prof. Thain in 384C Fitzpatrick (CSE Department Office)
+
+## Textbooks
 
 [<img align="right" height="128" src="https://pages.cs.wisc.edu/~remzi/OSTEP/book-cover-two.jpg"/>](http://ostep.org)
 
