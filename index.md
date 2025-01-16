@@ -14,10 +14,10 @@ title: CSE 30341 - Operating Systems Principles
 
 ##  Office Hours (Starting Week of Jan 20)
 
-![Office Hours Grid](office-hours.png)
+<img src="office-hours.png" width="75%" />
 
-- TAs in 150B Fitzpatrick (CSE student commons)
 - `***` indicates not first week
+- TAs in 150B Fitzpatrick (CSE student commons)
 - Prof. Thain in 384C Fitzpatrick (CSE Department Office)
 
 ## Quick Links
