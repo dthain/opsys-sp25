@@ -40,7 +40,7 @@ title: CSE 30341 - Operating Systems Principles
 |Week|Reading&nbsp;Due Mon&nbsp;11:59PM |Tuesday|Thursday|Due Friday 5:00PM|
 |-----|-----|-----|---|---|
 | 13 Jan  |             | [Intro&nbsp;Slides](https://docs.google.com/presentation/d/1Udc71mn21lsMWi7hFo3tQoJvWjSfK9IhL9SEAKE8Iyk/edit#slide=id.p1)<br>[Syllabus](syllabus)  | [Hardware](hardware) <br>[Metric Math](metric) | **[Homework A](homework-a)**<br>**Ch 1-2 Notes Due**
-| 20 Jan  | Ch. 3-6	| Processes | Processes | **Project 1**
+| 20 Jan  | Ch. 3-6	| Processes | Processes | [Project 1](project1)
 | 27 Jan  | Ch. 7-11	| Scheduling <br> [Basekernel Procs](basekernel-process)| Scheduling	| **Homework B**
 | 3 Feb   | Ch. 25-29	| Threads	 | Locks and Data Structures | **Project 2**
 | 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp25/tree/master/examples) | **Homework C**

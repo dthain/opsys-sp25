@@ -17,7 +17,7 @@ To submit, simply copy your files into the appropriate dropbox directory.
 For this course, your dropbox is here:
 
 ```
-/escnfs/courses/sp24-cse-30341.01/dropbox/YOURNETID
+/escnfs/courses/sp25-cse-30341.01/dropbox/YOURNETID
 ```
 
 Within that dropbox are further directories called `project1`, `project2`, and so forth.
@@ -25,13 +25,13 @@ To submit your files, just copy them into the appropriate directory.  For exampl
 to submit the files for project1, do this:
 
 ```
-cp dirlist.c treelist.c Makefile /escnfs/courses/sp24-cse-30341.01/dropbox/YOURNETID/project1
+cp manager.c Makefile /escnfs/courses/sp25-cse-30341.01/dropbox/YOURNETID/project1
 ```
 
 And to double check that the right items are present, just list the directory:
 
 ```
-ls -la /escnfs/courses/sp24-cse-30341.01/dropbox/YOURNETID/project1
+ls -la /escnfs/courses/sp25-cse-30341.01/dropbox/YOURNETID/project1
 ```
 
 You can submit whenever you want, and it is fine to update your submission
@@ -45,7 +45,7 @@ Other classes may have asked you to change the compiler by adjusting your `PATH`
 
 ### Use standard C99 (not C++) for this course.
 
-Plain old C99 is the language used nearly-universally for implementing operating systems and other low-level kinds of code. It is a much simpler and smaller language than C++, with many fewer "gotchas" and surprises. If you aren't familiar with plain C, read the Kernighan and Ritchie book. Use the --std=c99 option to gcc to ensure conformance to this standard.
+Plain old C99 is the language used nearly-universally for implementing operating systems and other low-level kinds of code. It is a much simpler and smaller language than C++, with many fewer "gotchas" and surprises.  Use the --std=c99 option to gcc to ensure conformance to this standard. If you need a review on some details of C, check out the [Dive Into Systems](https://diveintosystems.org) book.
 
 ### Pay close attention to warnings, and eliminate them.
 
@@ -65,7 +65,7 @@ if(!file) {
 
 ### Use good coding style and common sense.
 
-Give variables reasonable names, put comments near tricky bits of code, and break up complex code into smaller functions. Use the indent command to make your code line up nicely.
+Give variables reasonable names, put comments near tricky bits of code, and break up complex code into smaller functions. Use the `indent` command (or other similar tools) to make your code line up nicely.
 
 ## Advice on Debugging Tools
 

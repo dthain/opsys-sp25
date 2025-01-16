@@ -1,96 +1,71 @@
 
 # Project 1: System Calls and Error Checking
 
-First, read the [general instructions](general) for assignments. Make sure you are using the correct compiler on the correct machine.
+First, read the [general instructions](general) for assignments. Make sure you are using the correct compiler, flags, and machine.
 
-This project is a warm up assignment for the course. The basic concept is simple: write a program that summarizes the contents
-of a directory in the filesystem, recursively.  However, the main challenge of engineering operating systems is dealing with errors and unexpected conditions. Thus, the main focus of this assignment will be on the correct handling of errors. The goals of this project are:
+This project is a warm up assignment for the course. The basic concept is simple: write a program
+that continuously monitors and displays the contents of a directory. However, the main challenge of engineering operating systems is dealing with errors and unexpected conditions. Thus, the main focus of this assignment will be on the correct handling of errors. The goals of this project are:
 
 - To review your knowledge of basic C programming.
 - To learn the most essential Unix system calls.
 - To gain experience in rigorous error handling.
 
-## Part 1: Directory List
+## Directory Watch Tool
 
-Write a C program called `dirlist` that shows the contents of a directory.
+Write a C program called `dirwatch` that shows the contents of a directory.
 The program will be invoked like this:
 
 ```
 ./dirlist <pathname>
 ```
 
-If successful, the program should display information about each file in that directory,
+It should clear the screen and display information about each entry in that directory,
 showing the type, name, size (in bytes), access mode (in octal) and owners name (in text).
 Make sure to arrange the display nicely in columns, something like this:
 
 ```
-% ./dirlist $HOME
-NAME             SIZE    TYPE MODE OWNER
------------------------------------------
-program.c        3264 B  file 0644 dthain
-test               32 B  dir  0755 dthain
-homework.doc     7585 B  file 0644 dthain
-courses            16 B  link 0600 dthain
------------------------------------------
-```
+Contents of /home/dthain/test on 13:15:03 on 1/18/2025
 
-Upon successful completion, `dirlist` should report the total directories, files, and symlinks encountered, and exit with status zero.
-
-```
-dirlist: 34 files, 5 directories, and 3 symlinks
-```
-
-If `dirlist` encounters eny kind of error or user mistake, it must immediately stop and emit a message that states the program name, the failing operation, and the reason for the failure, and then exit with result 1. For example:
-
-```
-dirlist: couldn't open file mishmash: Permission Denied.
-dirlist: couldn't stat directory zibzab: No such file or directory.
-dirlist: couldn't allocate memory: Out of memory
-```
-
-If the program is invoked incorrectly, then it should immediately exit with a helpful message:
-
-```
-dirlist: Too many arguments!
-usage: dirlist <path>
-```
-
-In short, there should be no possible way to invoke the program that results in a segmentation fault, a cryptic message, or a silent failure. Either the program runs successfully to completion, or it emits a helpful and detailed error message to the user.
-
-## Part 2: Recursive Listing
-
-Once you have `dirlist` working nicely, then make a new program called `treelist`
-by copying `dirlist.c` into `treelist.c`.  Modify `treelist` so that it shows more
-detail for each item:
-
-- If the item is a file, then load the first 40 characters of the file into memory,
-and print them at the end of the line.  To keep the display readable, don't print
-newlines or any unprintable characters that may occur.  (See isprint(3))
-
-- If the item is a symbolic link, use `readlink` to obtain the target path of the link,
-and display that.
-
-- If the item is a directory, then display the contents of that directory recursively
-and clearly indented. Of course, if there are directories within directories (of arbitrary depth)
-then those should be displayed with additional indentation as appropriate.  (And you
-should skip over the special entries `.` and `..` so as not to recurse endlessly.)
-
-For example, your display may look something like this:
-
-```
-% ./treelist $HOME
 NAME             SIZE    TYPE MODE    OWNER CONTENTS
 --------------------------------------------------------------------------------
 program.c        3264 B  file 0644   dthain /* Program 1 for CSE 30341 */
-test               32 B  dir  0755   dthain 
-> data1.txt      32767 B  file 0644   dthain This is dataset #1 with dates...
-> data2.txt      15687 B  file 0644   dthain This is dataset #2 without dates...
+test               32 B  dir  0755   dthain (directory)
 homework.txt     7585 B  file 0644   dthain HW1 for CSE 30341 due on 01/01/2029
 courses            16 B  link 0600   dthain -> /some/other/dir
 --------------------------------------------------------------------------------
+
+total: 2 files, 1 directory, and 1 symlink
 ```
 
-Just like `dirlist`, `treelist` should also handle error conditions with informative messages.
+`dirwatch` should run continuously: after displaying the screen once,
+wait three seconds, and then display it again.  Keep going until the user hits Control-C.
+This allows you to monitor the contents of a system, and see what happens as new
+files are added, removed, renamed, and so forth.
+
+The `CONTENTS` column should summarize the contents of each directory entry,
+so you have some idea of what is there.  If the entry is a file, show the first
+line of the file.  If the entry is a directory, just show `(directory)`.
+If the entry is a symbolic link, show the target of the link.
+If the summary contains any non-printable characters or anything that would
+mess up the display, replace them with a placeholder character (perhaps `#`).
+
+Once you have the basic functionality working, then fix up your program
+so that it always nicely fits the available display space of your terminal window.
+Adjust the size of the CONTENTS column smaller or larger to make it fit the available columns.
+Likewise, if the listing would run off the bottom of the screen,
+then instead display something like `(truncated)` on the last line to
+show that not everything is displayed.  If the user resizes the window,
+then `dirwatch` should adjust to the new size.
+(See below about using `TIOCSWINSZ`.)
+
+**Important**: `dirwatch` should smoothly handle any kind of error condition that you can think of.
+If the user gives improper arguments, then exit with a helpful message.
+If a directory entry cannot be accessed for whatever reason,
+then display as much valid information as possible,
+and include a useful error message with `strerror`.
+
+In short, there should be no possible way to invoke the program that results in a segmentation fault, corrupted data, or a silent failure.  `dirwatch` should keep going optimistically and try again to display the directory.  Perhaps something has changed and the next time will work as desired. However, be careful that `dirwatch` does **not** cycle endlessly without a delay:
+this is known as "busy waiting" and will consume resources in a way that is disruptive to other users.
 
 ## System Calls
 
@@ -98,7 +73,7 @@ To carry out this assignment, you will need to learn about the following system 
 
 ```
 opendir, closedir, readdir, stat, lstat, readlink
-open, read, close, getpwuid, strerror, errno, exit
+open, read, close, ioctl, getpwuid, strerror, errno, exit
 ```
 
 Manual pages ("man pages") provide the complete reference documentation for system calls. They are available on any Linux machine by typing man with the section number and topic name. Section 1 is for programs, section 2 for system calls, section 3 for C library functions. For example man 2 open gives you the man page for open.   There are also a variety of online services ([linux.die.net](https://linux.die.net/man/2)) that provide the same information.
@@ -178,22 +153,35 @@ whether an entry is a directory, file, etc...
 - See `printf(3)` for many different ways of arranging output, justifying left and right, etc.
 - See `isprint(3)` for a listing of many functions that determine whether a character is printable, whitespace, numeric, etc...
 - See `getpwuid(3)` for converting an integer `uid` into information about a user.
+- See `TIOCSWINSZ(2)` to get the current terminal window size using `ioctl`
 
 ## Testing
 
-Make sure to test your program on a wide variety of conditions. Start by testing small directories, like your own home directory, and compare the output to what you get from `ls -l`.  Then move on to trying various kinds of system directories like `/etc` and `/home`.  Of course, it is likely that you won't have permission to access all of those directories, and your tools should stop with useful error messages.  If your program really gets stuck in an infinite loop, kill it with Control-C.
+Make sure to test your program on a wide variety of conditions.
+Start `dirwatch` in one window.
+From another window, add/remove/modify files in the watched directory,
+Resize the window many different ways.
+Induce a variety of error conditions to ensure `dirwatch` responds appropriately.
+Repeat for a variety of directories.
 
 ## Grading
+
 Your grade will be based on:
-- Correctness of `dirlist`. (40%)
-- Correctness of `treelist`. (30%)
-- Correct handling of all error conditions. (20%)
+- Basic functionality of `dirwatch`. (60%)
+- Correct handling of all error conditions. (30%)
 - Good coding style, such as clear formatting, sensible variable names, and useful comments. (10%)
 
 ## Turning In
 
-This assignment is due on Friday, January 16th at 11:59PM.
+This assignment is due on Friday, January 24th at 5:00PM.
 
 Review the [general instructions](general) for assignments.
 
-Please turn in only the source code files `dirlist.c` and `treelist.c` and a `Makefile` that builds both executables. Do not turn in executables or other files, since those just take up space, and we will build your code from source anyway.
+Please turn in only the source code file `dirwatch.c` and a `Makefile` that builds the executable. Do not turn in executables or other files, since those just take up space, and we will build your code from source anyway.
+
+## Things to Try for Fun
+
+- Figure out how to display colors and special characters to make a more appealing display.
+- Update your display to include system information like memory in use, CPU core load, etc...
+- Catch the SIGWINCH signal to detect window size changes, and adjust the display immediately.
+- Learn about the [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) interface to be notified about file system changes.
