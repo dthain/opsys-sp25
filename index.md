@@ -5,13 +5,11 @@ title: CSE 30341 - Operating Systems Principles - Spring 2025
 
 ## CSE 30341 - Operating Systems Principles - Spring 2025
 
-<table>
-<tr><td><img src="images/dthain.jpg" width="128px"><td>Prof. Douglas Thain (`dthain@nd.edu`)
-<tr><td><img src="images/lcsaszar.jpg" width="128px"><td>Grad TA: Lydia Csaszar (`lcsaszar@nd.edu`)
-<tr><td><img src="images/kkasensk.png" width="128px"><td>Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
-<tr><td><img src="images/atsianti.jpg" width="128px"><td>Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
-<tr><td><img src="images/lli27.jpg" width="128px"><td>Ugrad TA: Leyang Li (`lli27@nd.edu`)
-</table>
+- Prof. Douglas Thain (`dthain@nd.edu`)
+- Grad TA: Lydia Csaszar (`lcsaszar@nd.edu`)
+- Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
+- Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
+- Ugrad TA: Leyang Li (`lli27@nd.edu`)
 
 ## Quick Links
 
