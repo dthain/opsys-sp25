@@ -1,4 +1,4 @@
-# Homework E - Memory System Organization
+# Homework F - Memory System Organization
 
 For problems 1-4 draw a **neat detailed sketch** of the described
 situation.  Practice doing all computations easily and quickly using [metric units](metric.md)
