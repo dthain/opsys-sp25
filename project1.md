@@ -16,7 +16,7 @@ Write a C program called `dirwatch` that shows the contents of a directory.
 The program will be invoked like this:
 
 ```
-./dirlist <pathname>
+./dirwatch <pathname>
 ```
 
 It should clear the screen and display information about each entry in that directory,
