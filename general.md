@@ -25,7 +25,7 @@ To submit your files, just copy them into the appropriate directory.  For exampl
 to submit the files for project1, do this:
 
 ```
-cp manager.c Makefile /escnfs/courses/sp25-cse-30341.01/dropbox/YOURNETID/project1
+cp dirwatch.c Makefile /escnfs/courses/sp25-cse-30341.01/dropbox/YOURNETID/project1
 ```
 
 And to double check that the right items are present, just list the directory:
