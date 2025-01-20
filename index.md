@@ -7,7 +7,7 @@ title: CSE 30341 - Operating Systems Principles - Spring 2025
 
 - Prof. Douglas Thain (`dthain@nd.edu`)
 - Grad TA: Lydia Csaszar (`lcsaszar@nd.edu`)
-- Grad TA: Kylee Kazinski (`kkasensk@nd.edu`)
+- Grad TA: Kylee Kazenski (`kkazensk@nd.edu`)
 - Ugrad TA: Anthony Tsiantis (`atsianti@nd.edu`)
 - Ugrad TA: Leyang Li (`lli27@nd.edu`)
 
