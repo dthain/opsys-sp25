@@ -38,9 +38,9 @@ title: CSE 30341 - Operating Systems Principles - Spring 2025
 
 |Week|Reading&nbsp;Due Mon&nbsp;11:59PM |Tuesday|Thursday|Due Friday 5:00PM|
 |-----|-----|-----|---|---|
-| 13 Jan  |             | [Intro&nbsp;Slides](https://docs.google.com/presentation/d/1Udc71mn21lsMWi7hFo3tQoJvWjSfK9IhL9SEAKE8Iyk/edit#slide=id.p1)<br>[Syllabus](syllabus)  | [Hardware](hardware) <br>[Metric Math](metric) | **[Homework A](homework-a)**<br>**Ch 1-2 Notes Due**
-| 20 Jan  | Ch. 3-6	| Processes | Processes | [Project 1](project1)
-| 27 Jan  | Ch. 7-11	| Scheduling <br> [Basekernel Procs](basekernel-process)| Scheduling	| **Homework B**
+| 13 Jan  |             | [Intro&nbsp;Slides](https://docs.google.com/presentation/d/1Udc71mn21lsMWi7hFo3tQoJvWjSfK9IhL9SEAKE8Iyk/edit#slide=id.p1)<br>[Syllabus](syllabus)  | [Hardware](hardware) <br>[Metric Math](metric) <br> [BK:Interrupts](basekernel#interrupts) | **[Homework A](homework-a)**<br>**Ch 1-2 Notes Due**
+| 20 Jan  | Ch. 3-6	| Process API | Process Implementation<br>[BK:Processes](basekernel#processes | [Project 1](project1)
+| 27 Jan  | Ch. 7-11	| Scheduling <br> | Scheduling	| **Homework B**
 | 3 Feb   | Ch. 25-29	| Threads	 | Locks and Data Structures | **Project 2**
 | 10 Feb  | Ch. 30	| Condition Vars | CV Contd / [Examples](https://github.com/dthain/opsys-sp25/tree/master/examples) | **Homework C**
 | 17 Feb  | Ch. 31	| CV Contd / [Pathfinder](https://www.cs.cornell.edu/courses/cs614/1999sp/papers/pathfinder.html)    | Semaphores / [Examples](https://github.com/dthain/opsys-sp25/tree/master/examples) | **Project 3**
@@ -54,7 +54,7 @@ title: CSE 30341 - Operating Systems Principles - Spring 2025
 | 14 Apr  | Ch. 40-42	| Filesystem     | Filesystem | (Easter Break)
 | 21 Apr  | Ch. 53-55	| Security       | Security | **Homework F**
 | 28 Apr  | -           | Review | No Class | **Project 6**
-| 5 May	  |             |                | ** Final Exam ** |
+| 5 May	  |             |                | ** Final Exam**<br>**May 8th**<br>**7:30-9:30PM** |
 
 ## Very Incomplete List of Notable Operating Systems
 
