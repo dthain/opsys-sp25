@@ -56,7 +56,7 @@ Likewise, if the listing would run off the bottom of the screen,
 then instead display something like `(truncated)` on the last line to
 show that not everything is displayed.  If the user resizes the window,
 then `dirwatch` should adjust to the new size.
-(See below about using `TIOCSWINSZ`.)
+(See below about using `TIOCGWINSZ`.)
 
 **Important**: `dirwatch` should smoothly handle any kind of error condition that you can think of.
 If the user gives improper arguments, then exit with a helpful message.
@@ -153,7 +153,7 @@ whether an entry is a directory, file, etc...
 - See `printf(3)` for many different ways of arranging output, justifying left and right, etc.
 - See `isprint(3)` for a listing of many functions that determine whether a character is printable, whitespace, numeric, etc...
 - See `getpwuid(3)` for converting an integer `uid` into information about a user.
-- See `TIOCSWINSZ(2)` to get the current terminal window size using `ioctl(2)`
+- See `TIOCGWINSZ(2)` to get the current terminal window size using `ioctl(2)`
 
 ## Testing
 
