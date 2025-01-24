@@ -153,7 +153,7 @@ whether an entry is a directory, file, etc...
 - See `printf(3)` for many different ways of arranging output, justifying left and right, etc.
 - See `isprint(3)` for a listing of many functions that determine whether a character is printable, whitespace, numeric, etc...
 - See `getpwuid(3)` for converting an integer `uid` into information about a user.
-- See `TIOCSWINSZ(2)` to get the current terminal window size using `ioctl`
+- See `TIOCSWINSZ(2)` to get the current terminal window size using `ioctl(2)`
 
 ## Testing
 
