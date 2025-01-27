@@ -19,6 +19,7 @@ if(pid==0) {
 ```
 
 Which results in a single child process running "program".
+And, the parent process waits for the completion of the child.
 This can be sketched as a process tree, like this:
 
 <img src="homework-b-tree.png" width=128/>
