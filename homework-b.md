@@ -1,5 +1,9 @@
 # Homework B - Processes
 
+The following answers should be handwritten, either on paper or tablet.
+Submit by uploading photos/images to Canvas.
+
+
 Q1 - State precisely in one sentence the effect and return value of the `fork()` system call in Unix.
 
 Q2 - State precisely in one sentence the effect and return value of the `execl()` system call in Unix.
