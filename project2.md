@@ -179,7 +179,7 @@ Your grade will be based on:
 
 ## Turning In
 
-This assignment is due on Friday, January 9th at 11:59PM.
+This assignment is due on Friday, February 7th at 5:00PM.
 
 Review the [general instructions](general) for assignments.
 
