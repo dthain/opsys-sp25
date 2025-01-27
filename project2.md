@@ -24,17 +24,28 @@ It must read a line of input, accepting several possible commands:
 - run
 - array
 
-The first few command in this list will be "built in" commands in which the shell will do the actual work.  The `list` command should cause the shell to list the contents of the current directory, similar to the `dirwatch` program from the previous assignment.  Go right ahead and adapt the code that you already wrote, being sure to fix any bugs or problems.  For example:
+The first few command in this list will be "built in" commands in which the shell will do the actual work.  The `list` command should cause the shell to list the entries in the current directory, similar to the `dirwatch` program from the previous assignment.  (No need to include the file contents or the window measurements.)  Go right ahead and adapt the code that you already wrote, being sure to fix any bugs or problems.  For example:
 
 ```
 myshell> list
-NAME             SIZE    TYPE MODE OWNER CONTENTS
-----------------------------------------------------------------------
-program.c        3264 B  file 0644 dthain /* This is a program */
-test               32 B  dir  0755 dthain (directory)
-homework.doc     7585 B  file 0644 dthain Homework 5 ###
-courses            16 B  link 0600 dthain -> /link/to/somewhere/else
-----------------------------------------------------------------------
+NAME             SIZE    TYPE MODE OWNER 
+-----------------------------------------
+program.c        3264 B  file 0644 dthain
+test               32 B  dir  0755 dthain
+homework.doc     7585 B  file 0644 dthain
+courses            16 B  link 0600 dthain
+-----------------------------------------
+```
+
+If `list` is given an argument, it should list that directory instead:
+```
+myshell> list /etc
+NAME             SIZE    TYPE MODE OWNER 
+-----------------------------------------
+hosts             150 B  file 0644 root
+passwd           3846 B  file 0644 root
+...
+-----------------------------------------
 ```
 
 The `chdir` command should cause the shell to change its working directory to the named directory:
