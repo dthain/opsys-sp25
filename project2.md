@@ -20,20 +20,21 @@ It must read a line of input, accepting several possible commands:
 - start
 - wait
 - waitfor
-- run
 - kill
+- run
+- array
 
-The first few command in this list will be "built in" commands in which the shell will do the actual work.  The `list` command should cause the shell to list the contents of the current directory, in the same way as the `dirlist` program from the previous assignment.  Go right ahead and re-use the code that you already wrote, being sure to fix any bugs or problems.  For example:
+The first few command in this list will be "built in" commands in which the shell will do the actual work.  The `list` command should cause the shell to list the contents of the current directory, similar to the `dirwatch` program from the previous assignment.  Go right ahead and adapt the code that you already wrote, being sure to fix any bugs or problems.  For example:
 
 ```
 myshell> list
-NAME             SIZE    TYPE MODE OWNER
------------------------------------------
-program.c        3264 B  file 0644 dthain
-test               32 B  dir  0755 dthain
-homework.doc     7585 B  file 0644 dthain
-courses            16 B  link 0600 dthain
------------------------------------------
+NAME             SIZE    TYPE MODE OWNER CONTENTS
+----------------------------------------------------------------------
+program.c        3264 B  file 0644 dthain /* This is a program */
+test               32 B  dir  0755 dthain (directory)
+homework.doc     7585 B  file 0644 dthain Homework 5 ###
+courses            16 B  link 0600 dthain -> /link/to/somewhere/else
+----------------------------------------------------------------------
 ```
 
 The `chdir` command should cause the shell to change its working directory to the named directory:
@@ -82,15 +83,7 @@ myshell> waitfor 346
 myshell: No such process.
 ```
 
-The `run` command should combine the behavior of `start` and `waitfor`. `run` should start a program, wait for that particular process to finish, and print the exit status. For example:
-
-```
-myshell> run date
-Mon Jan 19 11:51:57 EST 2009
-myshell: process 348 exited normally with status 0
-```
-
-The `kill` command should kill a process by taking the pid of a specific child process. 
+The `kill` command should send signal 9 (SIGKILL) to a specific process.
 
 ```
 myshell> kill 346
@@ -100,8 +93,39 @@ myshell> kill 346
 myshell: unable to kill process 346
 ```
 
+The `run` command should combine the behavior of `start` and `waitfor`. `run` should start a program, wait for that particular process to finish, and print the exit status. For example:
 
-After each command completes, your program must continue to print a prompt and accept another line of input. The shell should exit with status zero if the command is `quit` or `exit` or the input reaches end-of-file. If the user types a blank line, simply print another prompt and accept a new line of input. If the user types any other command, the shell should print a reasonable error message:
+```
+myshell> run date
+Mon Jan 27 11:51:57 EST 2025
+myshell: process 348 exited normally with status 0
+```
+
+The `array` command should start multiple copies of the same command concurrently,
+and then wait for all of them to complete.
+The first argument to `array` is the number of copies to run, and the remainder
+of the arguments describe the command to run.  If one of the arguments to the command
+is exactly `@` then replace that argument with its position in the array.
+
+For example, this command:
+
+```
+myshell> array 8 /bin/echo hello @
+```
+
+should run `/bin/echo` eight times: `/bin/echo hello 0`, `/bin/echo hello 1`, ... , `/bin/echo hello 7`.  And the output should look something like this:
+
+```
+hello 0
+myshell: process 372 exited normally with status 0
+hello 2
+hello 1
+myshell: process 374 exited normally with status 0
+myshell: process 373 exited normally with status 0
+...
+```
+
+After each shell command completes, your program must continue to print a prompt and accept another line of input. The shell should exit with status zero if the command is `quit` or `exit` or the input reaches end-of-file. If the user types a blank line, simply print another prompt and accept a new line of input. If the user types any other command, the shell should print a reasonable error message:
 
 ```
 myshell> bargle ls -la
