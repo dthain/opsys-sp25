@@ -94,7 +94,7 @@ fork();
 Q10 - Sketch the outcome of this programm, and suggest why this might be a useful technique:
 
 ```
-fork();
+pid = fork();
 if(pid==0) {
     execl("program",...);
 } else {
