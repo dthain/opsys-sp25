@@ -18,8 +18,8 @@ in a single-processor operating system.
 
 - (a) A timeline showing the order in which each job executes.
 - (b) The response time and turnaround time of each job.
-- (c) The average response time and average turnaround time across all jobs.
-- (d) The utilization of the system over the entire schedule.
+- (c) The response time and turnaround time, averaged across all jobs.
+- (d) The percent utilization of the system over the entire schedule.
 
 You may assume that each context switch takes one time unit,
 and that ties are broken in favor of the job that arrived earlier.
@@ -40,7 +40,7 @@ the job that arrived earlier.
 Consider the following three jobs:
 
 - Job A wants to run continuously for 25 time units starting at time 0.
-- Starting at time 5, Job B wants to run for 1 time unit, then block for 11 time units, repeating three times.
+- Starting at time 5, Job B wants to run for 1 time unit, then block for 11 time units, repeating a total of three times.
 - Starting at time 18, Job C wants to run continuously for 10 time units
 
 **Question 4**: Carefully diagram how the basic MLFQ scheduler would schedule these jobs until all are complete,
