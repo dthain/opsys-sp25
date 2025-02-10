@@ -29,12 +29,12 @@ Write a C program called `seqperf.c` that does the following:
 - Declare two large integer arrays (A and B) of the same size, given on the command line
 - Fill both arrays with random numbers.
 - Compute the sum of the product of each pair of elements in A and B.
-(e.g. `a0*b0 + a0*b1 + a0*b2 ... + a1*b0 + a1*b1 + a1*b2 ... an*bn)
+(e.g. `a0*b0 + a0*b1 + a0*b2 ... + a1*b0 + a1*b1 + a1*b2 ... an*bn).
 - Print out the total value, and the time needed to compute the sum, with millisecond accuracy.
 
 Experiment with the size of the array a little bit until the
 time to compute the sum takes between ten and twenty seconds.
-(The precise size doesn't matter as long as you use it consistently.)
+(The specific size doesn't matter as long as you use it consistently going forward.)
 
 **Note 1:**  You will probably get a different total each time, because the random
 number generator gives you a difference sequence of numbers.  Use `srand` at the beginning of
@@ -106,19 +106,20 @@ Create a text document `labreport.txt` that details the performance and behavior
 0. Note specifically which student server on which you compiled and ran your code.
 (You can use any one of the servers, but must use the same one for all tests.)
 1. Show the command line and output of `seqperf` that yields a runtime of 10-20s.
-2. Show the command line and output of `threadperf` for a varying number of threads.
-3. Which configuration yields the fastest performance?  Explain why.
-4. Which configuration starts to show **worse** performance?  Explain why.
-5. Show the command-line and output of `progressperf` for the same range of threads as `threadperf`.
-6. Explain your strategy for performing synchronization in `progressperf`.
-7. Explain the difference in performance (if any) between `threadperf` and `progressperf`.
+2. How many cells/second does `seqperf` compute?  What is the average time to compute one cell?  (As always, put your answer in the form of a small number (1-1024) and a metric suffix with appropriate units.)
+3. Show the command line and output of `threadperf` for a varying number of threads.
+4. Which configuration yields the fastest performance?  Explain why.
+5. Which configuration starts to show **worse** performance as you add threads?  Explain why.
+6. Show the command-line and output of `progressperf` for the same range of threads as `threadperf`.
+7. Explain your strategy for performing synchronization in `progressperf`.
+8. Explain the difference in performance (if any) between `threadperf` and `progressperf`.
 
 ## Hints
 
 - Use `gettimeofday` around lines of code to measure the elapsed time.
 - Use the `pthreads` library to manage threads and perform locking.  You **will** need to use mutexes to solve this problem.  You will **not** need to use condition variables.  (that's in the next assignment)
 - You don't need any special libraries to display the progress bar: `printf` is sufficient.  Try using `\r` instead of `\n` to update the current output line, instead of scrolling.
-- On the CSE student machines, performance may vary due to the number of people logged in.  (And it will probably get worse closer to the due date.)  It would be wise to run each test several times, and then take the fastest time achieved.
+- On the CSE student machines, performance may vary due to the number of people logged in.  (And it will probably get worse closer to the due date!)  It would be wise to run each test several times, and then take the fastest time achieved.
 
 ## What to Turn In
 
