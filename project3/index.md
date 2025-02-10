@@ -103,15 +103,15 @@ Keep your notes for the lab report.
 
 Create a text document `labreport.txt` that details the performance and behavior of your code:
 
-0 - Note specifically which student server on which you compiled and ran your code.
+0. Note specifically which student server on which you compiled and ran your code.
 (You can use any one of the servers, but must use the same one for all tests.)
-1 - Show the command line and output of `seqperf` that yields a runtime of 10-20s.
-2 - Show the command line and output of `threadperf` for a varying number of threads.
-3 - Which configuration yields the fastest performance?  Explain why.
-4 - Which configuration starts to show **worse** performance?  Explain why.
-5 - Show the command-line and output of `progressperf` for the same range of threads as `threadperf`.
-6 - Explain your strategy for performing synchronization in `progressperf`.
-7 - Explain the difference in performance (if any) between `threadperf` and `progressperf`.
+1. Show the command line and output of `seqperf` that yields a runtime of 10-20s.
+2. Show the command line and output of `threadperf` for a varying number of threads.
+3. Which configuration yields the fastest performance?  Explain why.
+4. Which configuration starts to show **worse** performance?  Explain why.
+5. Show the command-line and output of `progressperf` for the same range of threads as `threadperf`.
+6. Explain your strategy for performing synchronization in `progressperf`.
+7. Explain the difference in performance (if any) between `threadperf` and `progressperf`.
 
 ## Hints
 
