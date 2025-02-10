@@ -1,4 +1,4 @@
-# Project 3: Thread Parallelism
+# Project 3: Thread ParallelismA
 
 Please review the [general instructions](general) for assignments.
 
@@ -48,9 +48,9 @@ negative values some of the time.  This is still fine as long as the result is c
 Make a copy of the previous program, and call the new one `threadperf.c`
 
 Modify `threadperf` to do the same task, but this time, split the work
-into N threads.  Each thread should work on a disjoint part of the task,
-producing a partial sum, which is then added together at the end to
-produce a grand total.
+into N threads. Each thread should work on a disjoint part of the task,
+producing a local partial sum, which is then added together at the end to
+produce a global sum.
 
 The size of the arrays and the number of threads should be given as command line arguments,
 and your program should print out the number of threads, the size
@@ -70,11 +70,23 @@ and record the performance achieved in each step.  Keep going until the
 performance flattens out.  In fact, keep going until the performance gets worse!
 Keep notes on this for the lab report, below.
 
-## Part 3: Synchronize on Output
+## Part 3: Synchronize on Total
 
-Make a copy of the previous program, and call the new one `progressperf.c`
+Make another copy of `threadperf` and call it `syncperf`.
 
-This final version should perform the same computation as the previous one,
+Modify `syncperf` so that instead of keeping a local partial sum,
+have each thread update the global total on every single addition.
+(Protect the total with a mutex, of course.)
+
+This probably won't perform well.  But let's see just how bad it is.
+Measure the performance of `syncperf` for 1-4 threads, and compare
+it against `threadperf`.  Keep your notes for the lab report.
+
+## Part 4: Synchronize on Progress Bar
+
+Make another copy of `threadperf`, and call the new one `progressperf.c`
+
+This final version should perform the same computation as Part 2,
 but with one twist: it should produce a (single) progress bar
 that goes from 0 to 100 percent incrementally as the total work is accomplished.
 
@@ -103,16 +115,17 @@ Keep your notes for the lab report.
 
 Create a text document `labreport.txt` that details the performance and behavior of your code:
 
-0. Note specifically which student server on which you compiled and ran your code.
-(You can use any one of the servers, but must use the same one for all tests.)
+0. Note specifically which student server on which you compiled and ran your code.  (Any of the servers are ok, as long as you use one consistently.)
 1. Show the command line and output of `seqperf` that yields a runtime of 10-20s.
 2. How many cells/second does `seqperf` compute?  What is the average time to compute one cell?  (As always, put your answer in the form of a small number (1-1024) and a metric suffix with appropriate units.)
 3. Show the command line and output of `threadperf` for a varying number of threads.
 4. Which configuration yields the fastest performance?  Explain why.
 5. Which configuration starts to show **worse** performance as you add threads?  Explain why.
-6. Show the command-line and output of `progressperf` for the same range of threads as `threadperf`.
-7. Explain your strategy for performing synchronization in `progressperf`.
-8. Explain the difference in performance (if any) between `threadperf` and `progressperf`.
+6. Show the command line and output of `syncperf` for 1-4 threads.
+7. Explain the observed performance of `syncperf`.
+8. Show the command-line and output of `progressperf` for the same range of threads as `threadperf`.
+9. Explain your strategy for performing synchronization in `progressperf`
+10. Explain the difference in performance (if any) between `threadperf` and `progressperf`.
 
 ## Hints
 
@@ -125,7 +138,7 @@ Create a text document `labreport.txt` that details the performance and behavior
 
 Review the [general instructions](general) on how to submit to your dropbox.
 
-- `seqperf.c`, `threadperf.c`, `progressperf.c` and a `Makefile` that builds all three from scratch.
+- `seqperf.c`, `threadperf.c`, `syncperf.c` `progressperf.c` and a `Makefile` that builds all three from scratch.
 - `labreport.txt` containing your answers to the questions above.
 
 ## Grading
