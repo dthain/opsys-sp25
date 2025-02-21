@@ -80,5 +80,6 @@ Make sure to include:
 - `monitor-rw.c`
 - `monitor-rw-nostarve.c`
 - `monitor-gpu.c`
+- `monitor-dining.c`
 - `evidence.txt`
 - `Makefile` that builds the three programs.
