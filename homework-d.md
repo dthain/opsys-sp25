@@ -20,11 +20,12 @@ Each of these requires **only a few lines of code** but each requires some subtl
 Start by downloading the `opsys-sp25-examples` repository to get started:
 
 ```
-git clone git@github.com:dthain/opsys-sp25-examples
+git clone https://github.com:dthain/opsys-sp25-examples
 ```
 
 Build the examples, and try them out to see what happens:
 ```
+cd opsys-sp25-examples
 make
 ./monitor-bank
 ./sem-rw
