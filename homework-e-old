@@ -57,4 +57,4 @@ memory, just to keep track of which ones are in use or available.
 Each bit in the bitmap indicates whether one specific page is used or available.
 How many frames must be set aside to store this bitmap?
 
-Take a snapshot of your answers and upload to Canvas as a PDF or JPG files.
+Write your answers on paper, take a snapshot, and upload to Canvas as a PDF or JPG file.
