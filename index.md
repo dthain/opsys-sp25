@@ -47,9 +47,9 @@ title: CSE 30341 - Operating Systems Principles - Spring 2025
 | 24 Feb  | Ch. 32-33	| Deadlock	 | Memory Overview | [Homework D](homework-d)
 | 3 Mar   | Ch. 13-16   | Segmentation   | [Midterm Exam](midterm) |
 | 10 Mar  | -           | Spring Break   | Spring Break |
-| 17 Mar  | Ch. 17-19	| Paging Mechanisms | TLBs / Performance	| **Project 4**
-| 24 Mar  | Ch. 20-22	| Multi-Level Paging | Swapping	| [Homework E](homework-e)
-| 31 Mar  | Ch. 35-37 + 44 | Swapping Cont. | I/O Devices<br>([Mouse](https://github.com/dthain/basekernel/blob/master/kernel/mouse.c) / [Disk](https://github.com/dthain/basekernel/blob/master/kernel/ata.c))  | 
+| 17 Mar  | Ch. 17-19	| Paging Mechanisms | TLBs / Performance	| 
+| 24 Mar  | Ch. 20-22	| Multi-Level Paging | Swapping	| [**Project 4**](project4)
+| 31 Mar  | Ch. 35-37 + 44 | Swapping Cont. | I/O Devices<br>([Mouse](https://github.com/dthain/basekernel/blob/master/kernel/mouse.c) / [Disk](https://github.com/dthain/basekernel/blob/master/kernel/ata.c))  | [Homework E](homework-e)
 | 7 Apr   | Ch. 38-39	| HDD [Datasheet](datasheets/seagate-st8000-hdd.pdf)<br>SSD [Datasheet](micron-2280-ssd.pdf) | Buffer Cache | **Project 5**
 | 14 Apr  | Ch. 40-42	| Filesystem     | Filesystem | (Easter Break)
 | 21 Apr  | Ch. 53-55	| Security       | Security | **Homework F**
