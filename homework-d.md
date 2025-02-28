@@ -82,4 +82,4 @@ Make sure to include:
 - `monitor-gpu.c`
 - `monitor-dining.c`
 - `evidence.txt`
-- `Makefile` that builds the three programs.
+- `Makefile` that builds the four programs.
