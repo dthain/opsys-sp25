@@ -103,7 +103,7 @@ Now check that you can run a single print job like this:
 
 Which should give you this:
 
-<img width=256 src=3DBenchy.png>
+<img width=256 src="3DBenchy.png"/>
 
 The Printer Scheduler
 ---------------------
