@@ -21,13 +21,8 @@ To manage a large amount of work, you need a **job scheduler** which will
 accept submissions, arrange for them to execute, and report back information
 to ther user.
 
-Graphics Setup
---------------
-
-For this assignment, we will be using the [gfx library](https://github.com/dthain/gfx) to display a simulated 3D printer. (You may have used something similar in Fundamentals.) Please visit that page, follow the setup instructions, and make sure that you can run the `example` application and see its output before going any further.
-
 3D Printer Simulator
--------------------
+--------------------
 
 In this project, you will build a job scheduler for a studio full
 of 3D printers.  Such printers (as well as industrial CNC machines) take
@@ -47,25 +42,58 @@ G00 X258.75 Y472.63
 Briefly, G00 indicates a fast repositioning move to an X Y position, G01 indicates a linear
 movement at a standard feed rate, and G02 indicates a circular arc.  There
 are many more codes, and you can read [more here](https://howtomechatronics.com/tutorials/g-code-explained-list-of-most-important-g-code-commands).
-The complete sequence of commands draws something like this:
-
-<img width="50%" src="circuit.png"/>
 
 So that you don't have to carry around a bunch of printers, we will
-give you a simulator `printsim` that reads simplified G-code and (gradually)
-produces an image on the screen, instead of a printed object.
-(It pauses a few moments at the end so that you can see the complete output.)
-Of course, the printing still takes some time to complete.  Your job is to build
-a scheduler that will keep several printers busy at once.
+give you a simulator `gcode2png` that reads simplified G-code and
+produces an image file, instead of a printed object.  We have deliberately
+slowed down the rendering code so that the printing takes some time to complete.
+Your job is to build a scheduler that will keep several printers busy at once.
 
-Download the [printer simulator code](http://github.com/dthain/opsys-sp25/tree/main/project4/src), build it on the student
-machines, and try out the examples given.  Write a simple G-code program
-by hand that draws a shape or logo of some kind, and run it through
-the simulator to get the idea.  Call this file `student.gcode` and
-keep it so you can turn it in later.
+Software Installation
+-------------------
 
-(You are welcome to examine the simulator code,
-but you won't need to change it for this assignment.)
+To get started with this project, you will need to make a custom software environment.
+
+First, download this starter code respository:
+```
+git clone https://github.com/dthain/opsys-sp25-project4-starter
+cd opsys-sp25-project4-starter
+```
+
+Next create a `conda` environment called `opsys-project4`
+to contain the various software dependencies.  `conda` allows you to install a wide variety of software without root privileges, and maintain separate environments
+for different projects.
+
+You may have installed `conda` in a prior class.
+Check to see if this command already works:
+
+```
+conda list
+```
+
+If that doesn't work, then install `conda` into your home directory from [miniforge](https://github.com/conda-forge/miniforge) like this:
+
+```
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh"
+bash Miniforge3-Linux-x86_64.sh
+```
+
+Then, create an environment called `opsys-project4` and enter into it:
+
+```
+conda create -n opsys-project4
+conda activate opsys-project4
+conda install -c conda-forge povray
+```
+
+You only need to do the above steps once to get started.
+If you are returning to your work later, you just need to re-activate
+the software environment and enter the proper directory:
+
+```
+conda activate opsys-project4
+cd opsys-sp25-project4-starter
+```
 
 The Printer Scheduler
 ---------------------
@@ -77,52 +105,53 @@ Then, it should print out a prompt and wait for input from the user.
 The available commands should be:
 
 ```
-submit <file>
+submit      <file.gcode> <file.png>
 list
-wait <jobid>
-drain
-remove <jobid>
-hurry <jobid>
-algo <fifo|sjf|balanced>
+wait        <jobid>
+waitany
+waitall
+remove      <jobid>
+setpriority <jobid> <priority>
+algo        <fifo|sjf|priority|balanced>
 quit
 help
 ```
 
-The **submit** command defines a new print job, and names the gcode
-file to execute on the printer.  **submit** should return immediately
-and display a unique integer job ID generated internally by your program.
+The **submit** command defines a new print job, names the gcode
+file to execute on the printer, and the name of the intended output file.
+**submit** should return immediately and display a unique integer job ID
+generated internally by your program.
 (Just start at one and count up.)  The job will then run in the background
 when selected by the scheduler.  Each simulated printer will pop open a window and start drawing.
 
 The **list** command lists all of the jobs currently known,
-giving the job id, current state (WAITING, PRINTING, or DONE) and filename.
+giving the job id, current state (WAITING, PRINTING, DONE) and filename.
 It should also state the average turnaround time and average response
-time of all jobs in the DONE state.
+time of all jobs in the COMPLETE state.
 You can format this output in any way that is consistent and easy to read.
 
-The **wait** command takes a jobid and pauses until that job is
+The **wait** command takes a specific jobid and blocks until that job is
 done printing.  Once complete, it should display the final status
 of the job (success or failure) and the time at which it was submitted,
 began printing, and completed.  (If the job was already complete,
 then it should just display the relevant information immediately.)
 
-The **drain** command should block until all jobs in the queue
-are in the DONE state.
-
-The **hurry** command should tag an existing job as an "important"
-and cause it to be executed at the first opportunity, regardless
-of the current scheduling algorithm.
+In a similar way, **waitany** should wait for any one job to complete,
+and **waitall** should wait for all jobs to complete.
 
 The **remove** command takes a jobid and then removes it from
 the queue.  However, a job cannot be removed if it is currently
 in the PRINTING state. In this case, display a suitable error and
 refuse to remove the job.
 
+The **setpriority** command should adjust the priority of a job
+after submission.
+
 The **algo** command should select the scheduling algorithms
 to be used by the printers: `fcfs` is first-come-first-served,
-and `sjf` is shortest-job-first, and `balanced` should prefer
-the shortest job, but make some accomodation to ensure that
-no job is starved indefinitely.
+`sjf` is shortest-job-first, an `priority` should run jobs in priority
+order.  `balanced` should generally prefer short and high-priority jobs,
+but also make some accomodation to ensure that no job is starved indefinitely.
 
 The **quit** command should immediately exit the program,
 regardless of any jobs in the queue.  (If end-of-file is detected
@@ -187,10 +216,11 @@ that contain a sequence of operations. For example, create `test1.txt`
 containing this:
 
 ```
-submit student.gcode
+submit example.gcode example.png
+list
+setpriority 1 10
 list
 wait 1
-list
 remove 1
 list
 quit
@@ -208,10 +238,10 @@ Please review the [general instructions](../general) for assignments.
 
 Turn in the following:
 
-- A gcode program of your own creation, called `student.gcode`
-- All of your source code for `printsched` and `printsim`.
-- A Makefile that builds `printsched` and `printsim` when the user types `make`, and cleans up all executables and object files on `make clean`.
-
+- All of your `.c` and `.h` files making up `printsched`.
+- A Makefile that builds `printsched` when the user types `make`,
+and cleans up all executables and object files on `make clean`.
+- A `README`
 This assignment is due at **5:00PM on Friday, March 28th**
 
 Grading
