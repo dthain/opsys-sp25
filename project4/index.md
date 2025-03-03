@@ -95,6 +95,16 @@ conda activate opsys-project4
 cd opsys-sp25-project4-starter
 ```
 
+Now check that you can run a single print job like this:
+
+```
+./gcode2png examples/3DBenchy.gcode --output=3DBenchy.png
+```
+
+Which should give you this:
+
+<img width=256 src=3DBenchy.png>
+
 The Printer Scheduler
 ---------------------
 
