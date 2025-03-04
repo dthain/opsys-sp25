@@ -135,7 +135,7 @@ generated internally by your program.
 when selected by the scheduler.  Each simulated printer will pop open a window and start drawing.
 
 The **list** command lists all of the jobs currently known,
-giving the job id, current state (WAITING, PRINTING, DONE) and filename.
+giving the job id, current state (WAITING, PRINTING, COMPLETE) and filename.
 It should also state the average turnaround time and average response
 time of all jobs in the COMPLETE state.
 You can format this output in any way that is consistent and easy to read.
