@@ -125,7 +125,7 @@ waitany
 waitall
 remove      <jobid>
 setpriority <jobid> <priority>
-algo        <fifo|sjf|priority|balanced>
+schedule    <fifo|sjf|priority|balanced>
 quit
 help
 ```
@@ -138,7 +138,8 @@ generated internally by your program.
 when selected by the scheduler.  Each simulated printer will pop open a window and start drawing.
 
 The **list** command lists all of the jobs currently known,
-giving the job id, current state (WAITING, PRINTING, COMPLETE) and filename.
+giving the job id, current state (WAITING, PRINTING, COMPLETE), filename,
+input size, output size, submit time, start time, and complete time.
 It should also state the average turnaround time and average response
 time of all jobs in the COMPLETE state.
 You can format this output in any way that is consistent and easy to read.
@@ -160,7 +161,7 @@ refuse to remove the job.
 The **setpriority** command should adjust the priority of a job
 after submission.
 
-The **algo** command should select the scheduling algorithms
+The **schedule** command should select the scheduling algorithms
 to be used by the printers: `fcfs` is first-come-first-served,
 `sjf` is shortest-job-first, an `priority` should run jobs in priority
 order.  `balanced` should generally prefer short and high-priority jobs,
@@ -179,7 +180,7 @@ Implementation Advice
 
 This project will bring together a variety of concepts that you have
 studied so far: process management, thread synchronization,
-and scheduling.  We aren't going to talk through every little function
+and job scheduling.  We aren't going to talk through every little function
 you should use; you will need to review prior material and look up
 documentation as needed.
 
@@ -225,7 +226,7 @@ you should display a detailed and helpful error message, and
 (where possible) continue operation of the program.
 
 A particularly useful  way to test is to create small input files
-that contain a sequence of operations. For example, create `test1.txt`
+that contain a sequence of operations. For example, create `test.txt`
 containing this:
 
 ```
@@ -241,7 +242,7 @@ quit
 
 Then, just run your scheduler with input redirected from that file:
 ```
-./printsched 3 < test1.txt
+./printsched 4 < test.txt
 ```
 
 Turning In
@@ -255,7 +256,6 @@ Turn in the following:
 - A Makefile that builds `printsched` when the user types `make`,
 and cleans up all executables and object files on `make clean`.
 - A `README` that briefly explains your code structure, and describes how your `balanced` algorithm works.
-
 This assignment is due at **5:00PM on Friday, March 28th**
 
 Grading
