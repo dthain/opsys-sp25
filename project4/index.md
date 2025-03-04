@@ -182,7 +182,7 @@ documentation as needed.
 
 Here is the basic architecture you should use:
 
-<img width="100%" src="architecture.svg"/>
+<img width="100%" src="overview.svg"/>
 
 The program should consists of several threads: one main thread and several
 printer threads, which interact through a common job queue.
