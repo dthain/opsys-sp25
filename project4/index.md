@@ -65,6 +65,7 @@ cd opsys-sp25-project4-starter
 Next create a `conda` environment called `opsys-project4`
 to contain the various software dependencies.  `conda` allows you to install a wide variety of software without root privileges, and maintain separate environments
 for different projects.
+* Note: If you use VS Code, do not attempt to use a conda extension; this will not work with a remote connection and will cause you a headache.
 
 You may have installed `conda` in a prior class.
 Check to see if this command already works:
