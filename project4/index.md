@@ -251,7 +251,7 @@ Turn in the following:
 - All of your `.c` and `.h` files making up `printsched`.
 - A Makefile that builds `printsched` when the user types `make`,
 and cleans up all executables and object files on `make clean`.
-- A `README`
+- A `README` that briefly explains your code structure, and describes how your `balanced` algorithm works.
 This assignment is due at **5:00PM on Friday, March 28th**
 
 Grading
