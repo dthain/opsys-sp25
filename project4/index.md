@@ -5,6 +5,8 @@ title: Project 4 - 3D Printer Scheduler
 
 # Project 4 - 3D Printer Scheduler
 
+Please review the [general instructions](../general) for assignments.
+
 The goals of this project are:
 - To demonstrate mastery of process and thread management.
 - To practice working with synchronized data structures.
@@ -252,6 +254,7 @@ Turn in the following:
 - A Makefile that builds `printsched` when the user types `make`,
 and cleans up all executables and object files on `make clean`.
 - A `README` that briefly explains your code structure, and describes how your `balanced` algorithm works.
+
 This assignment is due at **5:00PM on Friday, March 28th**
 
 Grading
