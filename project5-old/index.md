@@ -58,7 +58,7 @@ page fault on page #0
 
 The program exits because the page fault handler isn't written yet.  That is your job!
 
-Now, read the header files [disk.h](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/disk.h) and [page_table.h](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/page_table.c)
+Now, read the header files [disk.h](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/disk.h) and [page_table.h](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/page_table.h)
 to understand what operations you can perform on the disk and page table.
 
 Then try this as a getting started exercise.  If you run the program with an equal number of
