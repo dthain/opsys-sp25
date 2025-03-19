@@ -5,6 +5,8 @@ title: Project 5: Virtual Memory
 
 # Project 5: Virtual Memory
 
+Please review the [General Instructions For Assignments](../general).
+
 The goals of this project are:
 - to demonstrate mastery of the virtual memory concept.
 - to learn the code mechanics of operating system fault handlers.
@@ -43,8 +45,8 @@ and draws conclusions about the behavior of each algorithm.
 
 ## Getting Started 
 
-Begin by downloading the [source code](http://github.com/dthain/opsys-sp24/tree/main/project5/src) and building it.
-Look through [main.c](src/main.c) and notice that the program simply creates
+Begin by downloading the [source code](http://github.com/dthain/opsys-sp25-project5-starter) and building it.
+Look through [main.c](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/main.c) and notice that the program simply creates
 a virtual disk and page table, and then attempts to run one of our four "programs"
 using the virtual memory.  Because no mapping has been made between virtual and
 physical memory, a page fault happens immediately:
@@ -56,7 +58,7 @@ page fault on page #0
 
 The program exits because the page fault handler isn't written yet.  That is your job!
 
-Now, read the header files [disk.h](src/disk.h) and [page_table.h](src/page_table.h)
+Now, read the header files [disk.h](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/disk.h) and [page_table.h](https://github.com/dthain/opsys-sp25-project5-starter/blob/master/page_table.c)
 to understand what operations you can perform on the disk and page table.
 
 Then try this as a getting started exercise.  If you run the program with an equal number of
@@ -244,7 +246,7 @@ delta | 10 | 5201920
 
 Please review the [General Instructions For Assignments](../general).
 
-This assignment is due at **11:59PM on Monday, April 15th**.
+This assignment is due at **5:00PM on Friday, April 11th**.
 
 Turn in all of the following to **one** student's dropbox directory:
 - All of your source code and a Makefile that builds `virtmem` when the user types `make`.
@@ -254,7 +256,7 @@ Turn in all of the following to **one** student's dropbox directory:
 Please do not turn in executables or other large files.  As a reminder, your dropbox is this directory:
 
 ```
-/escnfs/courses/sp24-cse-30341.01/dropbox/YOURNAME/project5
+/escnfs/courses/sp25-cse-30341.01/dropbox/YOURNAME/project5
 ```
 
 ## Grading
