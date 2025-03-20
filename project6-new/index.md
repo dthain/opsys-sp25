@@ -1,9 +1,9 @@
-OA---
+---
 layout: default
-title: Project 6: Flash Storage
+title: Project 6: Flash Translation
 ---
 
-# Project 6: Flash Storage
+# Project 6: Flash Translation
 
 ## Objectives
 
@@ -263,16 +263,11 @@ Please review the [general instructions](../general) for assignments.
 This projects is due at **11:59PM on Wednesday April, 30th**.  Late assignments are not accepted.  (And it's also the end of the semester!)
 
 You should turn the following to **one** of the partner's dropboxes:
-- All of your source code.
+- All of your `.c` and `.h` files.
 - A `Makefile` that builds the code.
 - A `PARTNERS` file indicating the names of both partners.
 - A `results.txt` file containing the plain text output of the following commands:
 ```
-./bcache 1 100 100   # single thread, memory = disk
-./bcache 1 20 100    # single thread, memory < disk
-./bcache 10 100 100  # many threads, memory = disk
-./bcache 10 20 100   # many threads, memory < disk
-./bcache 20 5 100    # many threads, very limited memory
 ```
 As a reminder, your dropbox directory is:
 
