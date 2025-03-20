@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Project 6: Flash Translation
+title: Project 6 - Flash Translation
 ---
-
 # Project 6: Flash Translation
 
 ## Objectives
