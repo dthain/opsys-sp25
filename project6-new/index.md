@@ -134,14 +134,14 @@ For example, suppose that the OS wants to write disk blocks 0, 1, 5, 4, and 7, i
 The flash translation layer can choose to put those blocks anywhere.  Let's suppose that it deposits
 them in flash pages 0 through 4.  Here is what that looks like:
 
-![](translate1.png)
+![](ftl1.png)
 
 Now, if the OS wants to read back disk block 0, then the flash translation just needs to remember
 that it is located in page 0, and return that data (A).  However, if the OS wishes to write disk blocks
 1 and 4, then the translation layer must find new locations for those pages.  Here, it chooses to
 write them to flash pages 5 and 6:
 
-![](translate2.png)
+![](ftl2.png)
 
 Now, notice something -- flash pages 1 and 2 still have their old values, but are no longer needed.
 We call these "stale" pages.  We don't have to do anything about them immediately, but over time,
@@ -149,7 +149,7 @@ stale pages will accumulate.  To get rid of them, the translation layer
 needs to **clean** a flash block by copying all of the live data into a new flash block, and erasing the old block.
 This eliminates the stale pages, and makes more room for new ones to be written.
 
-![](translate3.png)
+![](ftl3.png)
 
 ## Getting Started
 
