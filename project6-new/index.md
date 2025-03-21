@@ -41,8 +41,8 @@ A single disk block can be updated by simply over-writing the existing data.
 This abstraction is often called the **block storage abstraction** and can be represented in C like this:
 
 ```
-int disk_read_block  ( struct disk *d, int dblock, char *data );
-int disk_write_block ( struct disk *d, int dblock, const char *data );
+int disk_read  ( struct disk *d, int disk_block, char *data );
+int disk_write ( struct disk *d, int disk_block, const char *data );
 ```
 
 For example, here is an abstract view of a disk with eight blocks.
@@ -65,9 +65,9 @@ resetting all the pages in that block back to the "empty" state.
 Let's call this the **flash storage abstraction** and it can be represented in C like this:
 
 ```
-int flash_read_page   ( struct flash_drive *f, int fpage, char *data );
-int flash_write_page  ( struct flash_drive *f, int fpage, const char *data );
-int flash_erase_block ( struct flash_drive *f, int fblock );
+int flash_read  ( struct flash_drive *f, int flash_page, char *data );
+int flash_write ( struct flash_drive *f, int flash_page, const char *data );
+int flash_erase ( struct flash_drive *f, int flash_block );
 ```
 
 <hr>
@@ -75,8 +75,8 @@ int flash_erase_block ( struct flash_drive *f, int fblock );
 use the terms **page** and **block** in a way that is not consistent with
 the rest of the operating system.  So a **disk block** is the same size
 as a **flash page**.  If you think that's confusing, well, I agree, but
-that's what they are called.
-To avoid confusion, this page will clearly indicate **disk blocks**, **flash pages**, and **flash blocks** as needed.
+unfortunately, that's what they are called.
+To minimize confusion, this page will clearly indicate **disk blocks**, **flash pages**, and **flash blocks** as needed.
 <hr>
 
 Because of these properties, flash storage devices have to be used in a different way.
@@ -157,7 +157,7 @@ Your job is to write a working flash translation layer for a simulated flash dis
 
 The code consists of three components:
 - `main.c` is the main program, which generates random read and write requests. (you can read this, but don't modify)
-- `ftl.c` is the flash translation layer which maps the disk interface to the flash device.  (do your work here)
+- `disk.c` is the flash translation layer which maps the disk interface to the flash device.  (do your work here)
 - `flash.c` is the simulated flash drive, which can perform read, write, and erase operations.  (you can read this, but don't modify)
 
 The system is invoked as follows:
@@ -221,10 +221,10 @@ Are there any other considerations?
 more frequently than the others.  What strategy can you use to ensure that the
 same block doesn't get picked over and over again?
 
-**Corner Cases** - Each `ftl_read` or `ftl_write` may encounter
+**Corner Cases** - Each `disk_read` or `disk_write` may encounter
 a block in any one of the states given above.  Take the time to consider
-every single state and think through what should happen when a `ftl_read`
-or `ftl_write` encounters a block in that state.
+every single state and think through what should happen when a `disk_read`
+or `disk_write` encounters a block in that state.
 
 ## Troubleshooting Tips
 
@@ -247,11 +247,11 @@ If your buffer cache returns an incorrect block back to a program,
 then you will get a message like this:
 
 ```
-CRASH: ftl_read of block %d returned incorrect data!
+CRASH: disk_read of block %d returned incorrect data!
 ```
 
 We recommend that you troubleshoot by adding `printfs` to indicate
-what each `ftl_read` and `ftl_write` are doing, what the state
+what each `disk_read` and `disk_write` are doing, what the state
 of each page is, and so forth.  By carefully tracing through
 the set of steps that lead to a crash, you should gain insight
 into the nature of the problem.
