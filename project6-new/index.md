@@ -51,7 +51,7 @@ A little later, the OS writes X to page 1 and Y to page 4, over-writing the
 values that were there before.  This sort of overwriting happens frequently
 in the course of implementing a filesystem.
 
-[!](disk.png)
+![](disk.png)
 
 However, flash storage devices have a different underlying physical structure.
 A flash drive is organized into **flash pages** of 4KB each.
@@ -83,13 +83,13 @@ Because of these properties, flash storage devices have to be used in a differen
 Here is an example of a flash storage device with 12 flash pages organized into
 blocks of four pages each.  As before, the OS writes A to page 0 and B to page 1, then reads E from page 4.  All the same as before.
 
-[!](flash1.png)
+![](flash1.png)
 
 But now, suppose that that OS wants to replace B with X.  The device is not capable of simply over-writing that flash page!  Instead, it is necessary to rearrange the data into some other available space.  Instead, we must copy page 0 to page 8, write the new value B page 9, and then erase block zero, like this:
 
-[!](flash2.png)
+![](flash2.png)
 
-[!](flash3.png)
+![](flash3.png)
 
 Flash drives have some nice performance advantages over disk drives.
 This [datasheet](https://www.mouser.com/datasheet/2/671/2gb_nand_m29b-1879920.pdf)
@@ -109,7 +109,7 @@ This is called **wear levelling**.
 
 The overall organization of storage in the operating system looks like this:
 
-[!](stack.png)
+![](stack.png)
 
 Applications access files through the system call interface.
 The filesystem layer transforms those system calls into operations on
@@ -134,14 +134,14 @@ For example, suppose that the OS wants to write disk blocks 0, 1, 5, 4, and 7, i
 The flash translation layer can choose to put those blocks anywhere.  Let's suppose that it deposits
 them in flash pages 0 through 4.  Here is what that looks like:
 
-[!](translate1.png)
+![](translate1.png)
 
 Now, if the OS wants to read back disk block 0, then the flash translation just needs to remember
 that it is located in page 0, and return that data (A).  However, if the OS wishes to write disk blocks
 1 and 4, then the translation layer must find new locations for those pages.  Here, it chooses to
 write them to flash pages 5 and 6:
 
-[!](translate2.png)
+![](translate2.png)
 
 Now, notice something -- flash pages 1 and 2 still have their old values, but are no longer needed.
 We call these "stale" pages.  We don't have to do anything about them immediately, but over time,
@@ -149,7 +149,7 @@ stale pages will accumulate.  To get rid of them, the translation layer
 needs to **clean** a flash block by copying all of the live data into a new flash block, and erasing the old block.
 This eliminates the stale pages, and makes more room for new ones to be written.
 
-[!](translate3.png)
+![](translate3.png)
 
 ## Getting Started
 
