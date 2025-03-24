@@ -7,6 +7,8 @@ title: Project 6 - Flash Translation
 
 ## Objectives
 
+Please review the [general instructions](../general) for assignments.
+
 In this project, you will build a **flash translation layer**
 that translates between a conventional block storage device interface
 and a modern flash storage interface.  Through this project, you will:
@@ -14,7 +16,6 @@ and a modern flash storage interface.  Through this project, you will:
 - understand the unusual properties of flash storage.
 - design and implement a translation strategy that is efficient and balanced.
 - observe the overheads involved in translating raw storage to usable storage.
-- gain experience in measuring and evaluating storage performance.
 - develop even more expertise in C programming with structures and pointers.
 
 **This project may be done in pairs or singletons.**
@@ -22,7 +23,7 @@ Please submit your work to a single dropbox with a PARTNERS file
 that indicates the project members.  Both partners will receive the same grade.
 
 **This is a challenging project that will take time to get right.**
-Although the total quantity of code is not large (perhaps a few hundred lines at most)
+Although the total quantity of code is not large (perhaps a two hundred lines or so)
 you will need to think carefully about designing data structures,
 dealing with corner cases, measuring performance, and other issues.
 You will need to think, design, think, code, and think some more.
@@ -156,9 +157,9 @@ This eliminates the stale pages, and makes more room for new ones to be written.
 Your job is to write a working flash translation layer for a simulated flash disk.  To get started, download the [source code](http://github.com/dthain/opsys-sp25-project6-starter) and build it with `make`.
 
 The code consists of three components:
-- [main.c](https://github.com/dthain/opsys-sp25-project6-starter/blob/master/main.c) is the main program, which generates random read and write requests. (you can read this, but don't modify)
-- [disk.c](https://github.com/dthain/opsys-sp25-project6-starter/blob/master/disk.c) is the flash translation layer which maps the disk interface to the flash device.  (do your work here)
-- [flash.c](https://github.com/dthain/opsys-sp25-project6-starter/blob/master/flash.c) is the simulated flash drive, which can perform read, write, and erase operations.  (you can read this, but don't modify)
+- `main.c` is the main program, which generates random read and write requests. (you can read this, but don't modify)
+- `disk.c` is the flash translation layer which maps the disk interface to the flash device.  (do your work here)
+- `flash.c` is the simulated flash drive, which can perform read, write, and erase operations.  (you can read this, but don't modify)
 
 The system is invoked as follows:
 
@@ -269,13 +270,12 @@ First, describe how your system works:
 - Describe your policy for wear leveling.  Again, are there any tradeoffs?
 
 Then, present the overall performance of your system:
-- Starting with a configuration of `8 16 4`, double the number of disk-blocks (and flash-pages) while holding the pages-per-block constant.  Produce a plot that shows how each of the measured values (disk reads/writes, flash reads/writes/erases) varies with the configuration. Explain any trends that you observe in the results.
-- Starting with a configuration of `128 256 4`, double the pages-per-block until the system no longer works.  In a similar way, plot the measured values, and explain any trends.
+- Starting with a configuration of `8 16 4`, double the number of disk-blocks (and flash-pages) while holding the pages-per-block constant, up to `256 512 4`.  Produce a plot that shows how each of the measured values (disk reads/writes, flash reads/writes/erases) varies with the configuration. Explain any trends that you observe in the results.
+- Starting with a configuration of `128 256 4`, double the pages-per-block until the system stops working.  In a similar way, plot the measured values, and explain any trends.
 - Starting with a configuration of `128 256 16`, reduce the number of flash pages until the system stops working.  In a similar way, plot the measured values, and explain any trends.
 
-
 There is no specific length requirement.
-I am more interested in your words than in fonts/margins/formatting, etc.
+I am more interested in your words than in fonts/margins/formatting, etc, so keep it simple.
 Write out your responses carefully, clearly, and thoughtfully.
 Prepare your plots carefully so that everything is appropriately labelled and easily readable.
 Don't add fluff just to make it longer.
