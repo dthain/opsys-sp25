@@ -22,11 +22,11 @@ Please submit your work to a single dropbox with a PARTNERS file
 that indicates the project members.  Both partners will receive the same grade.
 
 **This is a challenging project that will take time to get right.**
-Although the total quantity of code is not large (perhaps a few hundred lines)
+Although the total quantity of code is not large (perhaps a few hundred lines at most)
 you will need to think carefully about designing data structures,
 dealing with corner cases, measuring performance, and other issues.
 You will need to think, design, think, code, and think some more.
-Start the project **now** so you have time to get it right.
+Start the project right away so you have time to get it right.
 
 ## Overview of Storage Interfaces
 
@@ -156,9 +156,9 @@ This eliminates the stale pages, and makes more room for new ones to be written.
 Your job is to write a working flash translation layer for a simulated flash disk.  To get started, download the [source code](http://github.com/dthain/opsys-sp25-project6-starter) and build it with `make`.
 
 The code consists of three components:
-- `main.c` is the main program, which generates random read and write requests. (you can read this, but don't modify)
-- `disk.c` is the flash translation layer which maps the disk interface to the flash device.  (do your work here)
-- `flash.c` is the simulated flash drive, which can perform read, write, and erase operations.  (you can read this, but don't modify)
+- [main.c](https://github.com/dthain/opsys-sp25-project6-starter/blob/master/main.c) is the main program, which generates random read and write requests. (you can read this, but don't modify)
+- [disk.c](https://github.com/dthain/opsys-sp25-project6-starter/blob/master/disk.c) is the flash translation layer which maps the disk interface to the flash device.  (do your work here)
+- [flash.c](https://github.com/dthain/opsys-sp25-project6-starter/blob/master/flash.c) is the simulated flash drive, which can perform read, write, and erase operations.  (you can read this, but don't modify)
 
 The system is invoked as follows:
 
@@ -187,18 +187,20 @@ performance metrics, counting the number of disk and flash operations
 as well as the relative wear load on the flash pages:
 
 ```
-elapsed time: 9.93s
-disk reads:
-disk writes:
-
-flash reads:
-flash writes:
-flash erases:
-
-page 15 had the most writes: 375
-page 89 had the least writes: 18
-ratio of most/least: 20.83
+System Performance:
+disk reads: 7979
+disk writes: 2085
+flash  reads: 14027
+flash writes: 8133
+flash erases: 1008
+wear differential:
+most written:  page 8 was written 109 times
+least written: page 56 was written 86 times
+ratio of most/least: 1.27
 ```
+
+Note that, in real hardware, the number of flash-pages-per-block is fixed by the hardware and cannot be changed.  But since we are making a simulation, we can vary that design parameter at runtime with each run, in order to observe its effect.
+
 
 ## Things to Figure Out
 
@@ -232,14 +234,14 @@ We suggest that you test you begin by testing your implementation
 with some small examples where you can easily trace exactly what is happening:
 
 ```
-./flashsim 8 12 4 # 8 disk blocks, 12 flash pages, 4 pages per block
+./flashsim 8 16 4     # 8 disk blocks, 16 flash pages, 4 pages per block
 ```
 
 Then, once you have gained confidence that you have a correct result,
 try some larger configurations:
 
 ```
-./flashsim 128 256 32
+./flashsim 128 256 16
 ```
 
 Don't be surprised if some of these don't work the first time.
@@ -256,6 +258,28 @@ of each page is, and so forth.  By carefully tracing through
 the set of steps that lead to a crash, you should gain insight
 into the nature of the problem.
 
+## Lab Report
+
+Finally, write a lab report to describe the overall behavior of the system that you have designed.
+
+First, describe how your system works:
+- Describe how you designed the data structures for keeping track of everything.  Walk through some simple examples of reads and writes to explain how they work.
+- Describe your policy for selecting which page to write.  Are there any tradeoffs in selecting this policy?
+- Describe your policy for when and how to clean blocks.  Again, are there any tradeoffs?
+- Describe your policy for wear leveling.  Again, are there any tradeoffs?
+
+Then, present the overall performance of your system:
+- Starting with a configuration of `8 16 4`, double the number of disk-blocks (and flash-pages) while holding the pages-per-block constant.  Produce a plot that shows how each of the measured values (disk reads/writes, flash reads/writes/erases) varies with the configuration. Explain any trends that you observe in the results.
+- Starting with a configuration of `128 256 4`, double the pages-per-block until the system no longer works.  In a similar way, plot the measured values, and explain any trends.
+- Starting with a configuration of `128 256 16`, reduce the number of flash pages until the system stops working.  In a similar way, plot the measured values, and explain any trends.
+
+
+There is no specific length requirement.
+I am more interested in your words than in fonts/margins/formatting, etc.
+Write out your responses carefully, clearly, and thoughtfully.
+Prepare your plots carefully so that everything is appropriately labelled and easily readable.
+Don't add fluff just to make it longer.
+
 ## Turning In
 
 Please review the [general instructions](../general) for assignments.
@@ -265,10 +289,9 @@ This projects is due at **11:59PM on Wednesday April, 30th**.  Late assignments 
 You should turn the following to **one** of the partner's dropboxes:
 - All of your `.c` and `.h` files.
 - A `Makefile` that builds the code.
-- A `PARTNERS` file indicating the names of both partners.
-- A `results.txt` file containing the plain text output of the following commands:
-```
-```
+- A `PARTNERS` file indicating the login names of both partners.
+- A file `labreport.pdf` that contains the answers and discussions indicated above.
+
 As a reminder, your dropbox directory is:
 
 ```
@@ -279,8 +302,8 @@ As a reminder, your dropbox directory is:
 
 Your grade on this assignment will be based on the following:
 
-- Correct execution with a single program (and one background thread). (50%)
-- Correct execution with many programs. (30%)
-- Correct execution with many programs and limited memory. (10%)
+- Correct execution of the flash translation layer code. (60%)  
+- Discussion of the overall system design and tradeoffs. (15%)
+- Performance evaluation and discussion of observations. (15%)
 - Good coding style, including clear formatting, sensible variable names, and useful comments. (10%)
 
