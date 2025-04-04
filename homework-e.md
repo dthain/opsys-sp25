@@ -3,7 +3,7 @@
 For problems 1-4 draw a **neat detailed sketch** of the described
 situation.  Practice doing all computations easily and quickly using [metric units](metric.md)
 as we have done in class.  The size of all objects should be written as a small number
-accompanied by appropriate binary metric units.  For example, write `4MB` and not `2^32 bytes`.
+accompanied by appropriate binary metric units.  For example, write `4MB` and not `2^22 bytes`.
 
 1 - Consider a **segmented** memory space with a 24 bit virtual address, 24 bit physical address,
 and a max of 32 segments per process.  Sketch the translation of virtual to physical addresses as we have done in class. Make sure to include:
