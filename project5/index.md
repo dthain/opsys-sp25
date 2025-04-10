@@ -246,7 +246,7 @@ delta | 10 | 5201920
 
 Please review the [General Instructions For Assignments](../general).
 
-This assignment is due at **5:00PM on Friday, April 11th**.
+This assignment is due at <strike>5:00PM on Friday, April 11th</strike> **8:00AM on Monday, April 14.**
 
 Turn in all of the following to **one** student's dropbox directory:
 - All of your source code and a Makefile that builds `virtmem` when the user types `make`.
