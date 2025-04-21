@@ -54,5 +54,5 @@ title: CSE 30341 - Operating Systems Principles - Spring 2025
 | 14 Apr  | Ch. 40-42	| Filesystem     | Filesystem | (Easter Break)
 | 21 Apr  | Ch. 53-55	| Security       | Security |
 | 28 Apr  | -           | Review | No Class | **[Project 6](project6)**
-| 5 May	  |             |                | **Final Exam**<br>**May 8th**<br>**7:30-9:30PM** |
+| 5 May	  |             |                | **[Final Exam](final)**<br>**May 8th**<br>**7:30-9:30PM** |
 
