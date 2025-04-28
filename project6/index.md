@@ -284,7 +284,7 @@ Don't add fluff just to make it longer.
 
 Please review the [general instructions](../general) for assignments.
 
-This projects is due at **11:59PM on Wednesday April, 30th**.  Late assignments are not accepted.  (And it's also the end of the semester!)
+This projects is due at **11:59PM on <strike>Wednesday April, 30th</strike> Friday, May 2nd**.  Late assignments are not accepted.  (And it's also the end of the semester!)
 
 You should turn the following to **one** of the partner's dropboxes:
 - All of your `.c` and `.h` files.
