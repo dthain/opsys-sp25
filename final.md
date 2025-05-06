@@ -4,7 +4,13 @@ title: CSE 30341 - Final Exam
 ---
 
 Final Exam Info
--------------
+---------------
+
+The final exam will take place 7:30-9:30PM on Thursday, May 8th in our usual room.
+The exam is closed book -- no prepared notes or calculators.
+Expect to make use of the fast metric math skills that you practiced throughout the semester.
+
+**Please note that there will be no bathroom breaks during the exam, so plan accordingly.**
 
 The format will be similar to that of the midterm -- expect about 5 to 6 pages.
 All of the material covered in the course is relevant:
